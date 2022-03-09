@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 13:01:26 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 18:06:45 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/09 19:04:57 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/09 19:43:04 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_tolower(int c)
 {
-	size_t			cnt;
-	unsigned char	*str1;
-	unsigned char	*str2;
-
-	str1 = (unsigned char *)src;
-	str2 = (unsigned char *)dst;
-	cnt = 0;
-	while (cnt < len)
-	{
-		str2[cnt] = str1[cnt];
-		cnt++;
-	}
-	return (dst);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }

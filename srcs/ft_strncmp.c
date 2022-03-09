@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 13:01:26 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 18:06:45 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/09 18:24:50 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/09 19:42:33 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			cnt;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t	idx;
 
-	str1 = (unsigned char *)src;
-	str2 = (unsigned char *)dst;
-	cnt = 0;
-	while (cnt < len)
+	idx = 0;
+	while (s1[idx] && s2[idx] && idx < n)
 	{
-		str2[cnt] = str1[cnt];
-		cnt++;
+		if (s1[idx] != s2[idx])
+			return (s1[idx] - s2[idx]);
+		idx++;
 	}
-	return (dst);
+	if (idx == n)
+		return (0);
+	else
+		return (s1[idx] - s2[idx]);
 }

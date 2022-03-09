@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 13:01:26 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 18:06:45 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/09 17:28:51 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/09 18:03:29 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t			cnt;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t	cnt;
+	size_t	src_len;
 
-	str1 = (unsigned char *)src;
-	str2 = (unsigned char *)dst;
+	src_len = 0;
 	cnt = 0;
-	while (cnt < len)
+	while (src[src_len])
 	{
-		str2[cnt] = str1[cnt];
+		src_len++;
+	}
+	if (dstsize == 0)
+		return (src_len);
+	while (cnt < dstsize - 1)
+	{
+		dst[cnt] = src[cnt];
 		cnt++;
 	}
-	return (dst);
+	dst[cnt] = 0;
+	return (src_len);
 }
