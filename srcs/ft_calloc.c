@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 19:38:17 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/10 11:44:26 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/10 11:58:50 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/10 12:32:26 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
-	int		j;
-	int		needle_len;
+	unsigned char	*mem;
+	size_t			idx;
 
-	i = 0;
-	j = 0;
-	while (needle[needle_len])
-		needle_len++;
-	while (haystack[i] && i < len)
+	mem = malloc(size * count);
+	if (mem == 0)
+		return (0);
+	idx = 0;
+	while (idx < count * size)
 	{
-		while (haystack[i + j] == needle[j] && (i + j) < len)
-		{
-			j++;
-			if (j == needle_len)
-				return (&haystack[i]);
-		}
-		i++;
+		mem[idx] = 0;
+		idx++;
 	}
-	return (0);
+	return (mem);
 }
