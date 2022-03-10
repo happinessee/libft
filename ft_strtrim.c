@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/10 14:54:11 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 20:59:51 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,40 @@ int	is_set(char const *set, char c)
 	}
 	return (0);
 }
-//
+
+char	*make_str(char const *s1, size_t start, size_t end)
+{
+	char	*str;
+	size_t	idx;
+
+	idx = 0;
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (str == 0)
+		return (0);
+	while (start < end)
+	{
+		str[idx++] = s1[start++];
+	}
+	str[idx] = 0;
+	return (str);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	len;
-	size_t	idx;
-	size_t	j;
+	size_t	start;
+	size_t	end;
 
-	idx = 0;
+	start = 0;
 	len = 0;
-	while (s1[idx])
-	{
-		if (is_set(set, s1[idx]))
-			len--;
-		idx++;
-		len++;
-	}
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == 0)
-		return (0);
-	idx = 0;
-	j = 0;
-	while (idx < len)
-	{
-		if (is_set(set, s1[idx]))
-		{
-			idx++;
-			continue;
-		}
-		str[j++] = s1[idx++];
-	}
-	str[j] = 0;
-	return (str);
+	end = 0;
+	while (s1[start] && is_set(set, s1[start]))
+		start++;
+	while (s1[end])
+		end++;
+	--end;
+	while (s1[end] && is_set(set, s1[end]))
+		end--;
+	return (make_str(s1, start, end));
 }
