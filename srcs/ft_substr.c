@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 12:30:57 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/10 13:55:35 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/10 12:37:26 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/10 14:26:22 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		s1_len;
+	size_t	idx;
+	size_t	s_size;
 	char	*str;
 
-	s1_len = 0;
-	while (s1[s1_len])
-		s1_len++;
-	str = (char *)malloc(sizeof(char) * (s1_len + 1));
+	s_size = 0;
+	idx = start;
+	while (s[idx + s_size])
+		s_size++;
+	if (s_size < len)
+		str = (char *)malloc(sizeof(char) * (s_size + 1));
+	else
+		str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == 0)
 		return (0);
-	s1_len = 0;
-	while (s1[s1_len])
+	while (s[idx] && idx < len + start)
 	{
-		str[s1_len] = s1[s1_len];
-		s1_len++;
+		*str = s[idx++];
+		str++;
 	}
-	str[s1_len] = 0;
-	return (str);
+	return (&str[0]);
 }
