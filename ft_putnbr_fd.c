@@ -1,53 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 19:36:45 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 11:28:57 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/11 11:44:35 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/11 11:54:43 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int	get_numlen(int n)
+void	ft_putchar_fd(int n, int fd);
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		len;
-
-	len = 0;
-	if (n < 0)
-		len++;
-	while (n)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	long long	num;
-	char		*res;
-	int			len;
+	long long num;
 
 	num = (long long)n;
-	len = get_numlen(n);
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if (res == 0)
-		return (0);
 	if (num < 0)
 	{
 		num *= -1;
-		res[0] = '-';
+		ft_putchar_fd('-', fd);
 	}
-	res[len] = 0;
-	while (num)
-	{
-		res[--len] = num % 10 + '0';
-		num = num / 10;
-	}
-	return(res);
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	ft_putchar_fd(num % 10 + 48, fd);	
 }
