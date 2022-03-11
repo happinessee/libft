@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 12:20:57 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 12:29:44 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/11 13:22:06 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stddef.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -56,5 +57,8 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
