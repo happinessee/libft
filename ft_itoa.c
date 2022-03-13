@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:36:45 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 11:28:57 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	get_numlen(int n)
+static int	get_numlen(int n)
 {
 	int		len;
 

@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:07:51 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 10:53:47 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	count_words(char *str, char c)
+static size_t	count_words(char *str, char c)
 {
 	size_t	i;
 	size_t	words;
@@ -28,7 +28,7 @@ size_t	count_words(char *str, char c)
 	return (words);
 }
 
-void	copy_words(char	*dst, char *src, char c)
+static void	copy_words(char	*dst, char *src, char c)
 {
 	size_t	i;
 
@@ -41,7 +41,7 @@ void	copy_words(char	*dst, char *src, char c)
 	dst[i] = 0;
 }
 
-void	excute(char **arr, char *str, char c)
+static void	excute(char **arr, char *str, char c)
 {
 	size_t	i;
 	size_t	j;

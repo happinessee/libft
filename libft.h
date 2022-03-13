@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 12:20:57 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/12 10:59:33 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ typedef struct	s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
-void	*ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

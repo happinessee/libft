@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/10 21:31:00 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	is_set(char const *set, char c)
+static int	is_set(char const *set, char c)
 {
 	size_t	i;
 
