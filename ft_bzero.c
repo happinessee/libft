@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyojeong <hyojeong@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 20:21:28 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/07 20:39:02 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:14:11 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_bzero(void *s, size_t n)
 	cnt = 0;
 	while (cnt < n)
 	{
-		str[cnt] = '0';
+		str[cnt] = 0;
 		cnt++;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:05:57 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 19:43:31 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 13:33:13 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int		idx;
 

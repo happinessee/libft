@@ -6,10 +6,11 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:58:50 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/10 12:32:26 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:25:16 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
@@ -20,11 +21,6 @@ void	*ft_calloc(size_t count, size_t size)
 	mem = malloc(size * count);
 	if (mem == 0)
 		return (0);
-	idx = 0;
-	while (idx < count * size)
-	{
-		mem[idx] = 0;
-		idx++;
-	}
+	ft_bzero(mem, size);
 	return (mem);
 }
