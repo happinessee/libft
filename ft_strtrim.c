@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:29:57 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_set(char const *set, char c)
 	return (0);
 }
 
-char	*make_str(char const *s1, size_t start, size_t end)
+static char	*make_str(char const *s1, size_t start, size_t end)
 {
 	char	*str;
 	size_t	idx;
