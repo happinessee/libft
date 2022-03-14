@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:36:45 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:41:18 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ char	*ft_itoa(int n)
 		res[--len] = num % 10 + '0';
 		num = num / 10;
 	}
-	return(res);
+	return (res);
 }

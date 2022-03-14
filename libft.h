@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 12:20:57 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:40:40 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strtrim(char const *s1, char const *set);
 
-typedef struct	s_list
+typedef	struct	s_list
 {
 	void			*content;
-	struct s_list	*next;
+	struct	s_list	*next;
 }	t_list;
 
 t_list	*ft_lstnew(void *content);

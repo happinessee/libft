@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:40:59 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 11:42:03 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:31:04 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	long long 	idx;
+	long long	idx;
 
 	idx = 0;
 	while (s[idx])
