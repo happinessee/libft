@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 13:21:39 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 11:36:39 by hyojeong         ###   ########.fr       */
+/*   Created: 2022/03/14 09:52:01 by hyojeong          #+#    #+#             */
+/*   Updated: 2022/03/14 12:54:00 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
@@ -24,6 +24,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	new->next = tmp;
-	*lst = new;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
