@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:31:08 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 19:43:24 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:40:18 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str2;
 
 	idx = 0;
-	str1 = s1;
-	str2 = s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	while (idx < n)
 	{
 		if (str1[idx] != str2[idx])

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:13:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 19:42:15 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:48:11 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (idx < 0)
 	{
 		if (s[idx] == c)
-			return (&s[idx]);
+			return ((char *)&s[idx]);
 		idx--;
 	}
 	return (0);

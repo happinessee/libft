@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:45:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:38:58 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_isdigit(int c);
 
 static int	is_space(int c)
 {
-	if (c >= 9 && c <= 13 || c == 32)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	else
 		return (0);

@@ -6,13 +6,13 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:11:48 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 17:04:02 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:45:28 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static size_t	get_strlen(char *s)
+static size_t	get_strlen(char const *s)
 {
 	size_t	len;
 

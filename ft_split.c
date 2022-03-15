@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:07:51 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/13 23:24:08 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:43:25 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	size_t	cnt;
 
-	cnt = count_words(s, c);
+	cnt = count_words((char *)s, c);
 	res = (char **)malloc(sizeof(char *) * (cnt + 1));
-	excute(res, s, c);
+	excute(res, (char *)s, c);
 	res[cnt] = 0;
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 09:29:57 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:48:53 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static char	*make_str(char const *s1, size_t start, size_t end)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
 	size_t	len;
 	size_t	start;
 	size_t	end;
