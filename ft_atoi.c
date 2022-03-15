@@ -6,11 +6,11 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:45:15 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 14:38:58 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:59:47 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
+#include "libft.h"
 
 static int	is_space(int c)
 {
@@ -29,11 +29,8 @@ int	ft_atoi(const char *str)
 	result = 0;
 	idx = 0;
 	sign = 1;
-	while (str[idx])
-	{
-		if (is_space(str[idx]))
-			idx++;
-	}
+	while (str[idx] && is_space(str[idx]))
+		idx++;
 	if (str[idx] == '+' || str[idx] == '-')
 	{
 		if (str[idx] == '-')

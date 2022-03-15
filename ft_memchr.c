@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:22:44 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 19:42:24 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:14:55 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	while (idx < n)
 	{
-		if (str[idx] == c)
+		if (str[idx] == (unsigned char)c)
 			return (&str[idx]);
 		idx++;
 	}
