@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/15 15:21:56 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/15 15:46:19 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
 	ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
+INCS = libft.h
 
 OBJECTS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)

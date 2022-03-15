@@ -6,13 +6,12 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:44:35 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 09:39:31 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:45:53 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
-
-void	ft_putchar_fd(int n, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
