@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"stdlib.h": "c",
-		"cdefs.h": "c",
-		"_types.h": "c",
-		"_size_t.h": "c",
-		"stddef.h": "c"
-	}
-}
