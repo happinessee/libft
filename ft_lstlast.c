@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 09:49:41 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 10:25:33 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:23:42 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (lst == NULL)
 		return (0);
 	if (lst->next == NULL)
-		return (&lst);
+		return (lst);
 	while (lst->next)
 	{
 		lst = lst->next;
