@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:07:51 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/16 17:11:39 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 01:09:14 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ static size_t	count_words(char *str, char c)
 			words++;
 		i++;
 	}
-	if (i > 0 && words == 0)
-		words++;
+	words++;
 	return (words);
 }
 

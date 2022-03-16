@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/16 18:32:31 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 00:57:52 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	start = 0;
 	len = ft_strlen(s1);
-	end = len - 1;
+	end = len;
 	while (s1[start] && is_set(s1[start], set))
 		start++;
-	while (s1[end] && is_set(s1[end], set))
+	while (s1[end - 1] && is_set(s1[end - 1], set))
 		end--;
 	if (start >= end)
 		return (ft_strdup(""));
