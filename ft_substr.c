@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:37:26 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/16 16:50:06 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:46:59 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[idx] = 0;
 		return (str);
 	}
-	ft_strlcpy(str, s + start, len + 1);	
+	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
