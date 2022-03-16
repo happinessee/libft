@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:56:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/11 11:29:35 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:55:34 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (0);
 	while (s[idx])
 	{
-		str[idx] = f(idx, str[idx]);
+		str[idx] = f(idx, s[idx]);
 		idx++;
 	}
+	str[idx] = 0;
 	return (str);
 }

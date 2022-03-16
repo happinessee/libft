@@ -6,58 +6,50 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 14:48:53 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:32:31 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static int	is_set(char const *set, char c)
+static int	is_set(int c, char const *set)
 {
-	size_t	i;
+	size_t	idx;
 
-	i = 0;
-	while (set[i])
+	idx = 0;
+	while (set[idx])
 	{
-		if (c == set[i])
+		if (c == set[idx])
 			return (1);
-		i++;
+		idx++;
 	}
 	return (0);
 }
 
-static char	*make_str(char const *s1, size_t start, size_t end)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	size_t	idx;
+	size_t		start;
+	size_t		end;
+	size_t		len;
+	char		*str;
 
-	idx = 0;
+	if (s1 == 0)
+		return (0);
+	if (set == 0)
+		return (ft_strdup(s1));
+	start = 0;
+	len = ft_strlen(s1);
+	end = len - 1;
+	while (s1[start] && is_set(s1[start], set))
+		start++;
+	while (s1[end] && is_set(s1[end], set))
+		end--;
+	if (start >= end)
+		return (ft_strdup(""));
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (str == 0)
 		return (0);
-	while (start < end)
-	{
-		str[idx++] = s1[start++];
-	}
-	str[idx] = 0;
+	ft_strlcpy(str, s1 + start, end - start + 1);
 	return (str);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	len;
-	size_t	start;
-	size_t	end;
-
-	start = 0;
-	len = 0;
-	end = 0;
-	while (s1[start] && is_set(set, s1[start]))
-		start++;
-	while (s1[end])
-		end++;
-	--end;
-	while (s1[end] && is_set(set, s1[end]))
-		end--;
-	return (make_str(s1, start, end));
 }

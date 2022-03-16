@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/15 15:46:19 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/16 17:06:28 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,24 +25,33 @@ BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstit
 
 INCS = libft.h
 
-OBJECTS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
 
+ifdef COMMAND_BONUS
+	OBJECTS = $(OBJS) $(BONUS_OBJS)
+else
+	OBJECTS = $(OBJS)
+endif
+
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I .
+	@$(CC) $(CFLAGS) -c $< -o $@ -I .
 
 $(NAME) : $(OBJECTS)
-	ar rcs $@ $^
+	@ar rcs $@ $^
+	@echo "create libft.a"
 
 all : $(NAME)
 
 clean :
-	rm -f $(OBJECTS) $(BONUS_OBJS)
+	@rm -f $(OBJECTS) $(BONUS_OBJS)
+	@echo "delete object files"
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
 
-bonus : $(OBJECTS) $(BONUS_OBJS)
-	ar rcs $(NAME) $^
+bonus :
+	@make COMMAND_BONUS=1 all
+	@echo "add bonus+"

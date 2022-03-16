@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:07:51 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 18:19:06 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/16 17:11:39 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static size_t	count_words(char *str, char c)
 			words++;
 		i++;
 	}
+	if (i > 0 && words == 0)
+		words++;
 	return (words);
 }
 
@@ -33,7 +35,7 @@ static void	copy_words(char	*dst, char *src, char c)
 	size_t	i;
 
 	i = 0;
-	while (src[i] != c)
+	while (src[i] && src[i] != c)
 	{
 		dst[i] = src[i];
 		i++;
@@ -56,7 +58,7 @@ static void	excute(char **arr, char *str, char c)
 		else
 		{
 			j = 0;
-			while (str[i + j] != c)
+			while (str[i + j] && str[i + j] != c)
 				j++;
 			arr[wrd] = (char *)malloc(sizeof(char) * (j + 1));
 			copy_words(arr[wrd], str + i, c);
