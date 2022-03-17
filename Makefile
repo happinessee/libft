@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/16 17:06:28 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/16 18:59:20 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,5 @@ fclean : clean
 
 re : fclean all
 
-bonus :
-	@make COMMAND_BONUS=1 all
-	@echo "add bonus+"
+bonus : $(OBJECTS) $(BONUS_OBJS)
+	ar rcs $(NAME) $^
