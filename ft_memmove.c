@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:01:26 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/16 13:10:28 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 19:31:49 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	if (str1 - str2 > 0)
 	{
-		cnt = -1;
-		while (++cnt < (long)len)
+		cnt = 0;
+		while (cnt < (long)len)
+		{
 			str2[cnt] = str1[cnt];
+			cnt++;
+		}
 	}
 	else
 	{

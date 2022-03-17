@@ -6,19 +6,14 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:42:21 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/14 09:42:56 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 19:21:01 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	long long	idx;
-
-	idx = 0;
-	while (s[idx])
-		idx++;
-	write(fd, s, idx);
-	write(fd, "\n", 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
