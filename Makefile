@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/17 14:23:58 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/17 14:25:41 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,5 +52,5 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJS) $(BONUS_OBJS)
+bonus : $(OBJECTS) $(BONUS_OBJS)
 	ar rcs $(NAME) $^
