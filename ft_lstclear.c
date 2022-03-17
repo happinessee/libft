@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:56:54 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 15:22:37 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 12:42:11 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	tmp = *lst;
-	if (*lst == NULL)
-		return ;
-	while (tmp->next)
+	while (*lst)
 	{
-		del(tmp->content);
-		tmp = tmp->next;
+		tmp = (*lst)->next;
+		del((*lst)->content);
 		free(*lst);
+		*lst = tmp;
 	}
+	*lst = 0;
 }
