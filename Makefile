@@ -6,12 +6,12 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/17 14:25:41 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/17 21:33:11 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_isdigit.c ft_isprint.c ft_itoa.c ft_toupper.c \
@@ -52,5 +52,6 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJECTS) $(BONUS_OBJS)
-	ar rcs $(NAME) $^
+bonus :
+	@make COMMAND_BONUS=1 all
+	@echo "add bonus+"

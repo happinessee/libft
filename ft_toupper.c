@@ -6,14 +6,14 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:00:18 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/09 19:42:01 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:34:46 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-		return (c - 32);
+		return (c - ('a' - 'A'));
 	else
 		return (c);
 }

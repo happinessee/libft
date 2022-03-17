@@ -6,43 +6,23 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:11:48 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 14:45:28 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 20:29:15 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 #include <stdlib.h>
-
-static size_t	get_strlen(char const *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	idx;
-	size_t	idx2;
+	char			*str;
+	const size_t	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 
-	idx = 0;
-	idx2 = 0;
-	str = (char *)malloc(sizeof(char) * (get_strlen(s1) + get_strlen(s2) + 1));
+	str = (char *)malloc(sizeof(char) * len);
 	if (str == 0)
 		return (0);
-	while (s1[idx])
-	{
-		str[idx] = s1[idx];
-		idx++;
-	}
-	while (s2[idx2])
-	{
-		str[idx + idx2] = s2[idx2];
-		idx2++;
-	}
-	str[idx + idx2] = 0;
+	ft_strlcat(str, s1, len);
+	ft_strlcat(str, s2, len);
 	return (str);
 }
