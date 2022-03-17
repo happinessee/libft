@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:13:34 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/17 14:32:14 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:32:29 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*res;
 	t_list	*tmp;
 
-	if (lst == 0 || f == 0)
-		return (0);
 	res = ft_lstnew(f(lst->content));
 	if (res == 0)
 		return (NULL);

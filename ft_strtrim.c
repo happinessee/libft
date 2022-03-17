@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/17 00:57:52 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:21:40 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		len;
 	char		*str;
 
-	if (s1 == 0)
-		return (0);
 	if (set == 0)
 		return (ft_strdup(s1));
 	start = 0;
