@@ -6,11 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2022/03/16 18:59:20 by hyojeong         ###   ########.fr        #
-=======
-#    Updated: 2022/03/17 11:53:10 by hyojeong         ###   ########.fr        #
->>>>>>> 4b2462588f973ac13eac841fe7477ac641b2dc72
+#    Updated: 2022/03/17 14:21:19 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,5 +52,5 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJECTS) $(BONUS_OBJS)
+bonus : $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $^
