@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:07:51 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/17 17:21:29 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/18 13:14:26 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@ static void	copy_words(char	*dst, char *src, char c)
 	dst[i] = 0;
 }
 
+static void	clear(char **str, size_t cnt)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (idx < cnt)
+	{
+		free(str[idx]);
+		str[idx] = 0;
+		idx++;
+	}
+	free(str);
+}
+
 static void	excute(char **arr, char *str, char c)
 {
 	size_t	i;
@@ -54,17 +68,19 @@ static void	excute(char **arr, char *str, char c)
 	while (str[i])
 	{
 		if (c == str[i])
-			i++;
-		else
 		{
-			j = 0;
-			while (str[i + j] && str[i + j] != c)
-				j++;
-			arr[wrd] = (char *)malloc(sizeof(char) * (j + 1));
-			copy_words(arr[wrd], str + i, c);
-			i += j;
-			wrd++;
+			i++;
+			continue ;
 		}
+		j = 0;
+		while (str[i + j] && str[i + j] != c)
+			j++;
+		arr[wrd] = (char *)malloc(sizeof(char) * (j + 1));
+		if (arr[wrd] == 0)
+			clear(arr, wrd);
+		copy_words(arr[wrd], str + i, c);
+		i += j;
+		wrd++;
 	}
 }
 

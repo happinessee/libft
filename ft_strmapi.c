@@ -6,23 +6,20 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:56:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/16 16:55:34 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/18 10:32:02 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	size_t	idx;
-	size_t	len;
 
 	idx = 0;
-	len = 0;
-	while (s[len])
-		len++;
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == 0)
 		return (0);
 	while (s[idx])

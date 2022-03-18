@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/17 21:33:11 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/18 13:20:26 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,23 +35,20 @@ else
 endif
 
 %.o : %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ -I .
+	$(CC) $(CFLAGS) -c $< -o $@ -I .
 
 $(NAME) : $(OBJECTS)
-	@ar rcs $@ $^
-	@echo "create libft.a"
+	ar rcs $@ $^
 
 all : $(NAME)
 
 clean :
-	@rm -f $(OBJECTS) $(BONUS_OBJS)
-	@echo "delete object files"
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
 
-bonus :
-	@make COMMAND_BONUS=1 all
-	@echo "add bonus+"
+bonus : 
+	make COMMAND_BONUS=1 all

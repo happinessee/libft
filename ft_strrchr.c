@@ -6,22 +6,26 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:13:04 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/15 20:32:45 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/18 12:46:40 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int		idx;
+	char	*tmp;
 
 	idx = 0;
+	tmp = 0;
+	if (c == 0)
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[idx])
-		idx++;
-	while (idx >= 0)
 	{
 		if (s[idx] == c)
-			return ((char *)&s[idx]);
-		idx--;
+			tmp = (char *)&s[idx];
+		idx++;
 	}
-	return (0);
+	return (tmp);
 }

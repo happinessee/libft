@@ -6,26 +6,12 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/17 17:21:40 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/18 11:01:49 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-
-static int	is_set(int c, char const *set)
-{
-	size_t	idx;
-
-	idx = 0;
-	while (set[idx])
-	{
-		if (c == set[idx])
-			return (1);
-		idx++;
-	}
-	return (0);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -39,9 +25,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	len = ft_strlen(s1);
 	end = len;
-	while (s1[start] && is_set(s1[start], set))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (s1[end - 1] && is_set(s1[end - 1], set))
+	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 		end--;
 	if (start >= end)
 		return (ft_strdup(""));
