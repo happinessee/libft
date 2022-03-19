@@ -6,7 +6,7 @@
 #    By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:10:45 by hyojeong          #+#    #+#              #
-#    Updated: 2022/03/18 16:36:19 by hyojeong         ###   ########.fr        #
+#    Updated: 2022/03/19 11:13:07 by hyojeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,3 +52,5 @@ re : fclean all
 
 bonus : 
 	make COMMAND_BONUS=1 all
+
+.PHONY : all clean fclean re bonus
