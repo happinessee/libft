@@ -6,7 +6,7 @@
 /*   By: hyojeong <hyojeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:57:12 by hyojeong          #+#    #+#             */
-/*   Updated: 2022/03/19 12:22:04 by hyojeong         ###   ########.fr       */
+/*   Updated: 2022/03/19 19:14:22 by hyojeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
+	{
+		if (end - 1 < 1)
+			break ;
 		end--;
-	if (start >= end)
+	}
+	if (start > end)
 		return (ft_strdup(""));
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (str == 0)
